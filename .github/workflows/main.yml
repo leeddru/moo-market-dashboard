@@ -2,21 +2,29 @@ name: Update Dashboard
 
 on:
   schedule:
-    # 한국 시간 오전 6시 (UTC 21:00)
     - cron: '0 21 * * *'
-    # 한국 시간 오후 11시 30분 (UTC 14:30)
     - cron: '30 14 * * *'
-  workflow_dispatch: # 수동 실행 버튼 활성화
+  workflow_dispatch:
+
+# Node.js 24 강제 적용 환경 변수 추가
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 권한 명시 (안전장치)
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # 최신 버전 v4 권장
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5 # 최신 버전 v5 권장
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
@@ -32,8 +40,8 @@ jobs:
         run: python main.py
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4 # v4로 업데이트하여 최신 환경 대응
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: . # index.html이 생성되는 루트 디렉토리
+          publish_dir: .
           publish_branch: gh-pages
