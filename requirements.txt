@@ -1,0 +1,4 @@
+yfinance
+fredapi
+google-genai
+pandas
