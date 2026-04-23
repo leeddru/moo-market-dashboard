@@ -2,27 +2,28 @@ name: Update Dashboard
 
 on:
   schedule:
-    # 하루에 두 번 자동 실행 (UTC 기준이므로 한국 시간으로 계산)
-    # 한국 시간 오전 8시(23:00 UTC), 오후 6시(09:00 UTC) 설정 예시
+    # 한국 시간 오전 6시 (UTC 21:00)
     - cron: '0 21 * * *'
+    # 한국 시간 오후 11시 30분 (UTC 14:30)
     - cron: '30 14 * * *'
-  workflow_dispatch: # 수동으로도 실행 가능하게 함
+  workflow_dispatch: # 수동 실행 버튼 활성화
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # 최신 버전 v4 권장
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # 최신 버전 v5 권장
         with:
           python-version: '3.12'
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run script
         env:
@@ -34,5 +35,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: . # index.html이 있는 위치
+          publish_dir: . # index.html이 생성되는 루트 디렉토리
           publish_branch: gh-pages
