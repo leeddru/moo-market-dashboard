@@ -1,0 +1,38 @@
+name: Update Dashboard
+
+on:
+  schedule:
+    # 하루에 두 번 자동 실행 (UTC 기준이므로 한국 시간으로 계산)
+    # 한국 시간 오전 8시(23:00 UTC), 오후 6시(09:00 UTC) 설정 예시
+    - cron: '0 21 * * *'
+    - cron: '30 14 * * *'
+  workflow_dispatch: # 수동으로도 실행 가능하게 함
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run script
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python main.py
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: . # index.html이 있는 위치
+          publish_branch: gh-pages
