@@ -2,8 +2,8 @@ name: Update Dashboard
 
 on:
   schedule:
-    - cron: '0 19 * * *'
-    - cron: '30 12 * * *'
+    - cron: '27 13 * * *'
+    - cron: '7 21 * * *'
   workflow_dispatch:
 
 # Node.js 24 강제 적용 환경 변수 추가
