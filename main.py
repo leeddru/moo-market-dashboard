@@ -5,6 +5,7 @@ import os
 from google import genai
 import datetime
 import json
+from datetime import timedelta, timezone
 
 
 # 차트에 올렸을 때 보이는 날짜 : 연도도 같이 표시
@@ -169,7 +170,7 @@ if __name__ == "__main__":
 
     # AI 분석 받기
     ai_insight = get_ai_analysis(all_data)
-    ai_insight = ai_insight.replace("---", "\n").replace(" ### ", "\n💡").replace("** ", "\n").replace("**", "\n").replace(" * ", "\n").replace("*", "")
+    ai_insight = ai_insight.replace("---", "\n").replace("###", "\n💡").replace("** ", "\n").replace("**", "\n").replace(" * ", "\n").replace("*", "")
 
     # HTML 생성용 변수들 만들기 (반복문 활용)
     sections_html = ""
@@ -306,6 +307,14 @@ if __name__ == "__main__":
                 """
         sections_html += '</div></div>'
 
+    # 1. 한국 표준시(KST) 시간대 정의
+    KST = timezone(timedelta(hours=9))
+
+    # 2. 서버 시간이 아닌 한국 시간 기준으로 현재 날짜 가져오기
+    current_time_kst = datetime.datetime.now(KST)
+    today_date = current_time_kst.strftime('%Y-%m-%d')
+    update_time = current_time_kst.strftime('%H:%M:%S')
+
     html_template = f"""
     <html>
     <head>
@@ -371,7 +380,7 @@ if __name__ == "__main__":
     </head>
     <body>
         <div class="container">
-            <h1>👀 오늘의 미국 시장 지표 <small style="font-size: 0.5em; color: #888;">{datetime.date.today()} 📌데이터는 전 날 종가 기준</small></h1>
+            <h1>👀 오늘의 미국 시장 지표 <small style="font-size: 0.5em; color: #888;">{today_date + " " + update_time + "업데이트됨"} 📌데이터는 전 날 종가 기준</small></h1>
             
             {sections_html}
 
