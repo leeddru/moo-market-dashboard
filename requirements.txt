@@ -3,3 +3,4 @@ fredapi
 google-genai
 pandas
 fear_and_greed
+markdown

@@ -7,6 +7,7 @@ import datetime
 import json
 from datetime import timedelta, timezone
 import fear_and_greed
+import markdown
 
 
 # 차트에 올렸을 때 보이는 날짜 : 연도도 같이 표시
@@ -42,7 +43,7 @@ def get_market_data():
         "RRPONTSYD": "RRP (역레포)",
         "WTREGEN": "TGA 잔고",
         "M2SL": "M2 통화량",
-        "TOTRESNS": "지급준비금",
+        "WRESBAL": "지급준비금",
         "WMMFNS": "MMF 잔액",
         "BAMLH0A0HYM2": "하이일드 스프레드"
     }
@@ -180,7 +181,8 @@ if __name__ == "__main__":
 
     # AI 분석 받기
     ai_insight = get_ai_analysis(all_data)
-    ai_insight = ai_insight.replace("---", "\n").replace("###", "\n💡").replace("** ", "\n").replace("**", "\n").replace(" * ", "\n").replace("*", "").replace(". ",".\n")
+    ai_insight = markdown.markdown(ai_insight)
+    # ai_insight = ai_insight.replace("---", "\n").replace("###", "\n💡").replace("** ", "\n").replace("**", "\n").replace(" * ", "\n").replace("*", "").replace(". ",".\n")
 
     # fear and greed index
     fng_value, fng_desc = get_fng_data()
@@ -244,12 +246,12 @@ if __name__ == "__main__":
         "달러인덱스": "주요국 통화 대비 달러의 가치",
         "원/달러 환율": "한화 대비 달러 가치 (환율이 올랐다 = 한화 가치가 떨어졌다)",
         "미국채 10년": "글로벌 장기 금리의 기준점 (할인율의 기초)",
-        "미국채 2년": "통화 정책 방향에 민감하게 반응하는 단기 금리",
+        "미국채 2년": "통화 정책 방향에 민감하게 반응하는 단기 금리<br>🟢금리 하락 전환 = 위험자산 상승",
         "미 기준금리": "연준(Fed)의 정책 금리 결정치",
         "장단기(10년-2년)금리차": "🔴마이너스 시 경기 침체 전조<br>🔴역전(-)되었다가 급하게 정상화될 때 침체 예상",
         "SOFR": "금융기관 간 초단기 금리 (실질 자금 경색 확인)",
-        "Fed 자산": "연준의 자산 규모 (양적 완화/긴축의 척도)",
-        "RRP (역레포)": "연준의 저금통에 맡긴 단기 자금 (시장 입장에선 자고 있는 돈)<br>◾ RRP가 줄어들었다 = 잠재적 유동성이 깨어났다<br>◾ RRP가 바닥이다 = 시장에 풀릴 돈이 없다",
+        "Fed 자산": "연준의 자산 규모 (QT/QE의 척도) = 시장에 풀린 전체 돈의 원천<br>🚿수도꼭지처럼 잠갔다 풀었다 하며 시장의 유동성 조절",
+        "RRP (역레포)": "연준의 금고에 맡긴 단기 자금 (언제든 튀어나올 수 있는 현금 뭉치)<br>🧺저수지 역할<br>◾ RRP가 줄어들었다 = 유동성이 풀렸다<br>◾ RRP가 바닥이다 = 시장에 더 풀릴 돈이 없다",
         "TGA 잔고": "미 재무부의 현금 잔고 (세금이 들어오고 정부의 지출이 있는 곳)<br>이 돈이 시장으로 나왔다가 들어갔다가 하는 것<br>◾ 수치가 감소했다 = 돈이 시장에 풀렸다(유동성 증가)",
         "M2 통화량": "시중에 풀린 전체 돈의 양",
         "지급준비금": "은행이 연준에 예치한 자금 (유동성 최후 보루)",
@@ -434,7 +436,7 @@ if __name__ == "__main__":
             {fng_html}
             {sections_html}
 
-            <div class="ai-box">
+            <div class="ai-box" style="white-space: pre-wrap; line-height: 1.6;">
                 <h2 style="margin-top:0; color:#3e95cd;">🤖 Gemini AI 시장 분석</h2>
                 <p>{ai_insight.replace('\\n', '<br>')}</p>
             </div>
