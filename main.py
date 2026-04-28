@@ -6,6 +6,7 @@ from google import genai
 import datetime
 import json
 from datetime import timedelta, timezone
+import fear_and_greed
 
 
 # 차트에 올렸을 때 보이는 날짜 : 연도도 같이 표시
@@ -162,6 +163,15 @@ def get_ai_analysis(market_data):
         return f"AI 분석 중 오류가 발생했습니다: {e}"
 
 
+def get_fng_data():
+    try:
+        fng = fear_and_greed.get()
+        value = fng.value
+        description = fng.description # 'Extreme Fear', 'Fear', 'Neutral', 'Greed', 'Extreme Greed'
+        return int(value), description
+    except:
+        return 50, "Neutral" # 실패 시 중간값
+
 
 # 4. 메인 실행 부분
 if __name__ == "__main__":
@@ -170,7 +180,47 @@ if __name__ == "__main__":
 
     # AI 분석 받기
     ai_insight = get_ai_analysis(all_data)
-    ai_insight = ai_insight.replace("---", "\n").replace("###", "\n💡").replace("** ", "\n").replace("**", "\n").replace(" * ", "\n").replace("*", "")
+    ai_insight = ai_insight.replace("---", "\n").replace("###", "\n💡").replace("** ", "\n").replace("**", "\n").replace(" * ", "\n").replace("*", "").replace(". ",".\n")
+
+    # fear and greed index
+    fng_value, fng_desc = get_fng_data()
+
+    # f-string 안에서 사용할 변수 처리
+    fng_sections = ["Extreme Fear", "Fear", "Neutral", "Greed", "Extreme Greed"]
+    fng_colors = ["#ff4d4d", "#ffad33", "#e6e6e6", "#99cc33", "#009900"] # 빨강, 주황, 회색, 연두, 초록
+
+    fng_html = f"""
+    <div class="fng-container" style="margin: 20px 0; padding: 20px; background: #fff; border-radius: 12px; border: 1px solid #eee;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span style="font-weight: bold; font-size: 1.1rem;">공포 탐욕 지수</span>
+            <span style="font-size: 1.5rem; font-weight: 900; color: #333;">{fng_value}</span>
+        </div>
+        
+        <div class="fng-bar" style="display: flex; gap: 5px; height: 35px; width: 100%;">
+    """
+
+    for i, section in enumerate(fng_sections):
+        # 현재 등급(fng_desc)과 일치하는 칸만 색칠, 나머지는 연한 회색
+        is_active = section.lower() == fng_desc.lower()
+        bg_color = fng_colors[i] if is_active else "#f2f2f2"
+        text_color = "#fff" if is_active else "#ccc"
+        font_weight = "900" if is_active else "normal"
+        
+        fng_html += f"""
+            <div style="flex: 1; background: {bg_color}; display: flex; align-items: center; justify-content: center; 
+                        font-size: 0.7rem; color: {text_color}; font-weight: {font_weight}; border-radius: 4px; transition: all 0.3s;">
+                {section if is_active else ""}
+            </div>
+        """
+
+    fng_html += """
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.7rem; color: #999;">
+            <span>0 (Extreme Fear)</span>
+            <span>100 (Extreme Greed)</span>
+        </div>
+    </div>
+    """
 
     # HTML 생성용 변수들 만들기 (반복문 활용)
     sections_html = ""
@@ -381,7 +431,7 @@ if __name__ == "__main__":
     <body>
         <div class="container">
             <h1>👀 오늘의 미국 시장 지표 <small style="font-size: 0.5em; color: #888;">{today_date + " " + update_time + "업데이트됨"} 📌데이터는 전 날 종가 기준</small></h1>
-            
+            {fng_html}
             {sections_html}
 
             <div class="ai-box">
