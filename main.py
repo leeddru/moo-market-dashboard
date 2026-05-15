@@ -41,10 +41,11 @@ def get_market_data():
         "SOFR": "SOFR",
         "WALCL": "Fed 자산",
         "RRPONTSYD": "RRP (역레포)",
+        "RPONTSYD": "리포시장 규모",
         "WTREGEN": "TGA 잔고",
         "M2SL": "M2 통화량",
         "WRESBAL": "지급준비금",
-        "WMMFNS": "MMF 잔액",
+        "WRMFNS": "MMF 잔액(개인 투자)",
         "BAMLH0A0HYM2": "하이일드 스프레드"
     }
 
@@ -93,7 +94,9 @@ def get_market_data():
             elif code == "WALCL" or code == "WTREGEN":
                 dateCnt = 48
             elif code == "M2SL"  or code == "TOTRESNS":
-                dateCnt = 12
+                dateCnt = 12  
+            elif code == "WRMFNS":
+                dateCnt = 6
 
             all_data[name] = {
                 "date": df.tail(dateCnt).index.strftime('%Y-%m-%d').tolist(),
@@ -127,6 +130,8 @@ def get_market_data():
                 dateCnt = 48
             elif code == "M2SL"  or code == "TOTRESNS":
                 dateCnt = 12
+            elif code == "WRMFNS":
+                dateCnt = 6
 
             all_data[name] = {
                 "date": df.index.strftime('%Y-%m-%d').tolist()[-dateCnt:], # 마지막 90일만
@@ -233,7 +238,7 @@ if __name__ == "__main__":
         ("주요 지수", [("S&P 500", "SPY"), ("나스닥", "^IXIC")]),
         ("통화/환율", [("달러인덱스", "DX-Y.NYB"), ("원/달러 환율", "KRW=X")]),
         ("국채 금리", [("미국채 10년", "DGS10"), ("미국채 2년", "DGS2"), ("미 기준금리", "FEDFUNDS"), ("장단기(10년-2년)금리차", "T10Y2Y")]),
-        ("유동성", [("SOFR", "SOFR"), ("Fed 자산", "WALCL"), ("RRP (역레포)", "RRPONTSYD"), ("TGA 잔고", "WTREGEN"), ("M2 통화량", "M2SL"), ("지급준비금", "TOTRESNS"), ("MMF 잔액", "WMMFNS")]),
+        ("유동성", [("SOFR", "SOFR"), ("Fed 자산", "WALCL"), ("RRP (역레포)", "RRPONTSYD"), ("리포시장 규모", "RPONTSYD"), ("TGA 잔고", "WTREGEN"), ("M2 통화량", "M2SL"), ("지급준비금", "TOTRESNS"), ("MMF 잔액(개인 투자)", "WRMFNS")]),
         ("위험/심리", [("하이일드 스프레드", "BAMLH0A0HYM2"), ("공포지수 (VIX)", "^VIX")]),
         ("원자재", [("금 값", "GC=F"), ("은 값", "SI=F"), ("구리", "HG=F"), ("WTI유", "CL=F")]),
         ("기타", [("비트코인", "BTC-USD")])
@@ -243,19 +248,20 @@ if __name__ == "__main__":
     metric_descriptions = {
         "S&P 500": "미국 대형주 500개의 흐름을 나타내는 대표 지수",
         "나스닥": "기술주와 성장주 중심의 시장 지수",
-        "달러인덱스": "주요국 통화 대비 달러의 가치",
+        "달러인덱스": "주요국 통화 대비 달러의 가치<br>달러 강세(105 이상) : 현금이 왕, 자산 죽음<br>달러 가치가 오른다 = 시장이 '안전'을 추구하는 것<br>= 투자자들 : '위험한 주식보다 안전한 미국채를 사자'<br>= 주식/코인 하락, 원자재(금,구리,석유) 하락-비싸져서 수요가 줄어듦<br>◾ 일반적으로  미국채 금리🔼 ➡ 달러 수요🔼 ➡ 달러 인덱스🔼<br>◾ 위기 땐 미국이 불안해서 사람들이 국채를 팔아 ➡ 국채 가격 폭락, 금리🔼 + 달러도 버림 ➡ 달러 인덱스🔽",
         "원/달러 환율": "한화 대비 달러 가치 (환율이 올랐다 = 한화 가치가 떨어졌다)",
         "미국채 10년": "글로벌 장기 금리의 기준점 (할인율의 기초)",
-        "미국채 2년": "통화 정책 방향에 민감하게 반응하는 단기 금리<br>🟢금리 하락 전환 = 위험자산 상승",
+        "미국채 2년": "연준의 금리 방향에 민감하게 반응하는 단기 금리<br>오늘 돈이 풀릴까 묶일까? 판단<br>🟢금리 하락 전환 = 연준이 금리를 내리겠구나, 유동성 풀림, 위험자산 상승",
         "미 기준금리": "연준(Fed)의 정책 금리 결정치",
         "장단기(10년-2년)금리차": "🔴마이너스 시 경기 침체 전조<br>🔴역전(-)되었다가 급하게 정상화될 때 침체 예상",
-        "SOFR": "금융기관 간 초단기 금리 (실질 자금 경색 확인)",
-        "Fed 자산": "연준의 자산 규모 (QT/QE의 척도) = 시장에 풀린 전체 돈의 원천<br>🚿수도꼭지처럼 잠갔다 풀었다 하며 시장의 유동성 조절",
-        "RRP (역레포)": "연준의 금고에 맡긴 단기 자금 (언제든 튀어나올 수 있는 현금 뭉치)<br>🧺저수지 역할<br>◾ RRP가 줄어들었다 = 유동성이 풀렸다<br>◾ RRP가 바닥이다 = 시장에 더 풀릴 돈이 없다",
+        "SOFR": "미국 국채를 담보로 하는 하루짜리 대출 금리 (리포 시장의 기준 금리)<br>🔴갑자기 튄다 = 은행들이 힘들어졌다",
+        "Fed 자산": "연준의 자산 규모 (QT/QE의 척도) = 시장에 풀린 전체 돈의 원천<br>🚿수도꼭지처럼 잠갔다 풀었다 하며 시장의 유동성 조절<br>◾ 자산이 늘고 있다 = 돈을 찍어 시장에 돈을 내보내고 있다(QE)",
+        "RRP (역레포)": "연준의 금고에 맡긴 (연준이 흡수한) 단기 자금 (언제든 튀어나올 수 있는 현금 뭉치)<br>🧺저수지 역할<br>◾ RRP가 줄어들었다 = 유동성이 풀렸다<br>◾ RRP가 바닥이다 = 시장에 더 풀릴 돈이 없다<br>◾ 갑자기 급등 = 돈이 안전한 곳으로 숨었다",
+        "리포시장 규모": "연준의 리포 투입<br>🔴 규모가 갑자기 증가한다면 연준이 시스템이 죽지 않게 돈을 넣은 것",
         "TGA 잔고": "미 재무부의 현금 잔고 (세금이 들어오고 정부의 지출이 있는 곳)<br>이 돈이 시장으로 나왔다가 들어갔다가 하는 것<br>◾ 수치가 감소했다 = 돈이 시장에 풀렸다(유동성 증가)",
-        "M2 통화량": "시중에 풀린 전체 돈의 양",
-        "지급준비금": "은행이 연준에 예치한 자금 (유동성 최후 보루)",
-        "MMF 잔액": "시중의 대기성 자금 규모",
+        "M2 통화량": "시중에 풀린 전체 돈의 양<br>◾ Fed 자산🔼+RRP🔽+M2🔼 = 유동성 풍부(주식 상승)<br>◾ Fed 자산🔽+RRP🔼+M2🔽 = 유동성 감소(주식 하락,안전자산으로 이동)",
+        "지급준비금": "은행이 연준에 예치한 자금 (비상금)<br>RRP가 바닥이 나면 여기서 돈이 빠지고 은행은 힘들어진다)",
+        "MMF 잔액(개인 투자)": "시중의 대기성 자금 규모",
         "하이일드 스프레드": "🔴상승하면 기업들의 부도 위험 증가",
         "공포지수 (VIX)": "😨 높을수록 시장이 불안하다는 뜻",
         "금 값": "대표적인 안전 자산이자 인플레이션 헤지 수단",
@@ -278,10 +284,24 @@ if __name__ == "__main__":
                 dates_json = json.dumps(all_data[name]["date"])
                 values_json = json.dumps(all_data[name]["value"])
                 canvas_id = f"chart_{name.replace(' ', '_').replace('/', '_')}"
+
+                # --- 배경색 조건 설정 ---
+                # 1. Fed 자산, 지급준비금 그룹 (노란 계열)
+                if name in ["Fed 자산", "지급준비금", "TGA 잔고"]:
+                    header_style = 'style="background-color: #faf6ea;"'
+                
+                # 2. 미 기준금리, M2 통화량, MMF 잔액, 리포시장 규모 그룹 (기본색 없음)
+                elif name in ["미 기준금리", "M2 통화량", "MMF 잔액"]:
+                    header_style = ''
+                
+                # 3. 그 외 나머지 모든 항목 (붉은 계열)
+                else:
+                    header_style = 'style="background-color: #fdf1f1;"'
+                # -----------------------
                 
                 sections_html += f"""
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" {header_style}>
                         <div class="title-group">
                             <span class="metric-name">{name}</span>
                             <div class="metric-desc">{desc}</div>
@@ -403,6 +423,9 @@ if __name__ == "__main__":
                 justify-content: space-between; 
                 align-items: flex-start; /* 위쪽 정렬로 변경 */
                 margin-bottom: 10px; 
+                /* background-color: #fdf1f1;일반  #faf6ea 목요일(fed자산,지급준비금,)  미 기준금리(한달) */
+                border-radius: 10px;
+                padding: 10px;
             }}
             .title-group {{ display: flex; flex-direction: column; }} /* 이름과 설명을 세로로 */
             .metric-name {{ font-weight: bold; color: #333; font-size: 1rem; }}

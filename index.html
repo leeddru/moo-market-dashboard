@@ -34,6 +34,9 @@
                 justify-content: space-between; 
                 align-items: flex-start; /* 위쪽 정렬로 변경 */
                 margin-bottom: 10px; 
+                /* background-color: #fdf1f1;일반  #faf6ea 목요일(fed자산,지급준비금,)  미 기준금리(한달) */
+                border-radius: 10px;
+                padding: 10px;
             }
             .title-group { display: flex; flex-direction: column; } /* 이름과 설명을 세로로 */
             .metric-name { font-weight: bold; color: #333; font-size: 1rem; }
@@ -63,7 +66,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>👀 오늘의 미국 시장 지표 <small style="font-size: 0.5em; color: #888;">2026-05-15 09:14:55업데이트됨 📌데이터는 전 날 종가 기준</small></h1>
+            <h1>👀 오늘의 미국 시장 지표 <small style="font-size: 0.5em; color: #888;">2026-05-15 09:45:43업데이트됨 📌데이터는 전 날 종가 기준</small></h1>
             
     <div class="fng-container" style="margin: 20px 0; padding: 20px; background: #fff; border-radius: 12px; border: 1px solid #eee;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
@@ -107,7 +110,7 @@
     
             <div class="section"><h2>주요 지수</h2><div class="data-grid">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">S&P 500</span>
                             <div class="metric-desc">미국 대형주 500개의 흐름을 나타내는 대표 지수</div>
@@ -128,7 +131,7 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">나스닥</span>
                             <div class="metric-desc">기술주와 성장주 중심의 시장 지수</div>
@@ -149,15 +152,15 @@
                 </div>
                 </div></div><div class="section"><h2>통화/환율</h2><div class="data-grid">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">달러인덱스</span>
-                            <div class="metric-desc">주요국 통화 대비 달러의 가치</div>
+                            <div class="metric-desc">주요국 통화 대비 달러의 가치<br>달러 강세(105 이상) : 현금이 왕, 자산 죽음<br>달러 가치가 오른다 = 시장이 '안전'을 추구하는 것<br>= 투자자들 : '위험한 주식보다 안전한 미국채를 사자'<br>= 주식/코인 하락, 원자재(금,구리,석유) 하락-비싸져서 수요가 줄어듦<br>◾ 일반적으로  미국채 금리🔼 ➡ 달러 수요🔼 ➡ 달러 인덱스🔼<br>◾ 위기 땐 미국이 불안해서 사람들이 국채를 팔아 ➡ 국채 가격 폭락, 금리🔼 + 달러도 버림 ➡ 달러 인덱스🔽</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
-                            <div class="metric-value">98.97</div>
+                            <div class="metric-value">98.98</div>
                             <div class="metric-change" style="color: #ff4d4d; font-size: 0.85rem; font-weight: bold;">
-                                ▲ 0.50%
+                                ▲ 0.51%
                             </div>
                         </div>
                     </div>
@@ -170,15 +173,15 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">원/달러 환율</span>
                             <div class="metric-desc">한화 대비 달러 가치 (환율이 올랐다 = 한화 가치가 떨어졌다)</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
-                            <div class="metric-value">1,495.88</div>
+                            <div class="metric-value">1,498.28</div>
                             <div class="metric-change" style="color: #ff4d4d; font-size: 0.85rem; font-weight: bold;">
-                                ▲ 0.41%
+                                ▲ 0.57%
                             </div>
                         </div>
                     </div>
@@ -191,7 +194,7 @@
                 </div>
                 </div></div><div class="section"><h2>국채 금리</h2><div class="data-grid">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">미국채 10년</span>
                             <div class="metric-desc">글로벌 장기 금리의 기준점 (할인율의 기초)</div>
@@ -212,10 +215,10 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">미국채 2년</span>
-                            <div class="metric-desc">통화 정책 방향에 민감하게 반응하는 단기 금리<br>🟢금리 하락 전환 = 위험자산 상승</div>
+                            <div class="metric-desc">연준의 금리 방향에 민감하게 반응하는 단기 금리<br>오늘 돈이 풀릴까 묶일까? 판단<br>🟢금리 하락 전환 = 연준이 금리를 내리겠구나, 유동성 풀림, 위험자산 상승</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
                             <div class="metric-value">3.98</div>
@@ -233,7 +236,7 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" >
                         <div class="title-group">
                             <span class="metric-name">미 기준금리</span>
                             <div class="metric-desc">연준(Fed)의 정책 금리 결정치</div>
@@ -254,7 +257,7 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">장단기(10년-2년)금리차</span>
                             <div class="metric-desc">🔴마이너스 시 경기 침체 전조<br>🔴역전(-)되었다가 급하게 정상화될 때 침체 예상</div>
@@ -275,10 +278,10 @@
                 </div>
                 </div></div><div class="section"><h2>유동성</h2><div class="data-grid">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">SOFR</span>
-                            <div class="metric-desc">금융기관 간 초단기 금리 (실질 자금 경색 확인)</div>
+                            <div class="metric-desc">미국 국채를 담보로 하는 하루짜리 대출 금리 (리포 시장의 기준 금리)<br>🔴갑자기 튄다 = 은행들이 힘들어졌다</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
                             <div class="metric-value">3.59</div>
@@ -296,10 +299,10 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #faf6ea;">
                         <div class="title-group">
                             <span class="metric-name">Fed 자산</span>
-                            <div class="metric-desc">연준의 자산 규모 (QT/QE의 척도) = 시장에 풀린 전체 돈의 원천<br>🚿수도꼭지처럼 잠갔다 풀었다 하며 시장의 유동성 조절</div>
+                            <div class="metric-desc">연준의 자산 규모 (QT/QE의 척도) = 시장에 풀린 전체 돈의 원천<br>🚿수도꼭지처럼 잠갔다 풀었다 하며 시장의 유동성 조절<br>◾ 자산이 늘고 있다 = 돈을 찍어 시장에 돈을 내보내고 있다(QE)</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
                             <div class="metric-value">6,728,502.00</div>
@@ -317,10 +320,10 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">RRP (역레포)</span>
-                            <div class="metric-desc">연준의 금고에 맡긴 단기 자금 (언제든 튀어나올 수 있는 현금 뭉치)<br>🧺저수지 역할<br>◾ RRP가 줄어들었다 = 유동성이 풀렸다<br>◾ RRP가 바닥이다 = 시장에 더 풀릴 돈이 없다</div>
+                            <div class="metric-desc">연준의 금고에 맡긴 (연준이 흡수한) 단기 자금 (언제든 튀어나올 수 있는 현금 뭉치)<br>🧺저수지 역할<br>◾ RRP가 줄어들었다 = 유동성이 풀렸다<br>◾ RRP가 바닥이다 = 시장에 더 풀릴 돈이 없다<br>◾ 갑자기 급등 = 돈이 안전한 곳으로 숨었다</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
                             <div class="metric-value">2.03</div>
@@ -338,7 +341,28 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
+                        <div class="title-group">
+                            <span class="metric-name">리포시장 규모</span>
+                            <div class="metric-desc">연준의 리포 투입<br>🔴 규모가 갑자기 증가한다면 연준이 시스템이 죽지 않게 돈을 넣은 것</div>
+                        </div>
+                        <div class="value-group" style="text-align: right;">
+                            <div class="metric-value">0.00</div>
+                            <div class="metric-change" style="color: #4d79ff; font-size: 0.85rem; font-weight: bold;">
+                                ▼ 100.00%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chart_리포시장_규모"></canvas>
+                    </div>
+                    <div style="font-size: 0.65rem; color: #bbb; text-align: right; margin-top: 5px;">
+                        날짜: 2026-05-14
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header" style="background-color: #faf6ea;">
                         <div class="title-group">
                             <span class="metric-name">TGA 잔고</span>
                             <div class="metric-desc">미 재무부의 현금 잔고 (세금이 들어오고 정부의 지출이 있는 곳)<br>이 돈이 시장으로 나왔다가 들어갔다가 하는 것<br>◾ 수치가 감소했다 = 돈이 시장에 풀렸다(유동성 증가)</div>
@@ -359,10 +383,10 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" >
                         <div class="title-group">
                             <span class="metric-name">M2 통화량</span>
-                            <div class="metric-desc">시중에 풀린 전체 돈의 양</div>
+                            <div class="metric-desc">시중에 풀린 전체 돈의 양<br>◾ Fed 자산🔼+RRP🔽+M2🔼 = 유동성 풍부(주식 상승)<br>◾ Fed 자산🔽+RRP🔼+M2🔽 = 유동성 감소(주식 하락,안전자산으로 이동)</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
                             <div class="metric-value">22,686.00</div>
@@ -380,10 +404,10 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #faf6ea;">
                         <div class="title-group">
                             <span class="metric-name">지급준비금</span>
-                            <div class="metric-desc">은행이 연준에 예치한 자금 (유동성 최후 보루)</div>
+                            <div class="metric-desc">은행이 연준에 예치한 자금 (비상금)<br>RRP가 바닥이 나면 여기서 돈이 빠지고 은행은 힘들어진다)</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
                             <div class="metric-value">3,102,810.00</div>
@@ -399,9 +423,30 @@
                         날짜: 2026-05-13
                     </div>
                 </div>
+                
+                <div class="card">
+                    <div class="card-header" style="background-color: #fdf1f1;">
+                        <div class="title-group">
+                            <span class="metric-name">MMF 잔액(개인 투자)</span>
+                            <div class="metric-desc">시중의 대기성 자금 규모</div>
+                        </div>
+                        <div class="value-group" style="text-align: right;">
+                            <div class="metric-value">2,298.20</div>
+                            <div class="metric-change" style="color: #ff4d4d; font-size: 0.85rem; font-weight: bold;">
+                                ▲ 0.30%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chart_MMF_잔액(개인_투자)"></canvas>
+                    </div>
+                    <div style="font-size: 0.65rem; color: #bbb; text-align: right; margin-top: 5px;">
+                        날짜: 2026-04-06
+                    </div>
+                </div>
                 </div></div><div class="section"><h2>위험/심리</h2><div class="data-grid">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">하이일드 스프레드</span>
                             <div class="metric-desc">🔴상승하면 기업들의 부도 위험 증가</div>
@@ -422,7 +467,7 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">공포지수 (VIX)</span>
                             <div class="metric-desc">😨 높을수록 시장이 불안하다는 뜻</div>
@@ -443,15 +488,15 @@
                 </div>
                 </div></div><div class="section"><h2>원자재</h2><div class="data-grid">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">금 값</span>
                             <div class="metric-desc">대표적인 안전 자산이자 인플레이션 헤지 수단</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
-                            <div class="metric-value">4,655.30</div>
+                            <div class="metric-value">4,628.60</div>
                             <div class="metric-change" style="color: #4d79ff; font-size: 0.85rem; font-weight: bold;">
-                                ▼ 0.90%
+                                ▼ 1.47%
                             </div>
                         </div>
                     </div>
@@ -464,15 +509,15 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">은 값</span>
                             <div class="metric-desc">산업용 수요와 안전 자산 성격이 혼재된 금속</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
-                            <div class="metric-value">83.89</div>
+                            <div class="metric-value">83.06</div>
                             <div class="metric-change" style="color: #4d79ff; font-size: 0.85rem; font-weight: bold;">
-                                ▼ 5.63%
+                                ▼ 6.56%
                             </div>
                         </div>
                     </div>
@@ -485,15 +530,15 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">구리</span>
                             <div class="metric-desc">닥터 코퍼(Dr. Copper)/ 실물 경기 회복과 인프라 수요의 척도</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
-                            <div class="metric-value">6.57</div>
+                            <div class="metric-value">6.56</div>
                             <div class="metric-change" style="color: #4d79ff; font-size: 0.85rem; font-weight: bold;">
-                                ▼ 0.99%
+                                ▼ 1.08%
                             </div>
                         </div>
                     </div>
@@ -506,15 +551,15 @@
                 </div>
                 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">WTI유</span>
                             <div class="metric-desc">물가에 영향을 주는 에너지 가격<br>🔴100 넘으면 인플레이션 경고등</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
-                            <div class="metric-value">101.85</div>
+                            <div class="metric-value">101.77</div>
                             <div class="metric-change" style="color: #ff4d4d; font-size: 0.85rem; font-weight: bold;">
-                                ▲ 0.82%
+                                ▲ 0.74%
                             </div>
                         </div>
                     </div>
@@ -527,15 +572,15 @@
                 </div>
                 </div></div><div class="section"><h2>기타</h2><div class="data-grid">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #fdf1f1;">
                         <div class="title-group">
                             <span class="metric-name">비트코인</span>
                             <div class="metric-desc">◾ 구리랑 함께 상승 시 실물 경기 회복 + 위험자산 선호<br>◾ 구리 그대로, 비트코인만 오르면 유동성 장세</div>
                         </div>
                         <div class="value-group" style="text-align: right;">
-                            <div class="metric-value">81,416.03</div>
+                            <div class="metric-value">81,330.00</div>
                             <div class="metric-change" style="color: #ff4d4d; font-size: 0.85rem; font-weight: bold;">
-                                ▲ 2.70%
+                                ▲ 2.59%
                             </div>
                         </div>
                     </div>
@@ -550,54 +595,53 @@
 
             <div class="ai-box" style="white-space: pre-wrap; line-height: 1.6;">
                 <h2 style="margin-top:0; color:#3e95cd;">🤖 Gemini AI 시장 분석</h2>
-                <p><p>음메에~ 경제 전문가 Moo입니다! 현재 시장 상황을 딱 한 줄로 요약해 드리자면 이렇습니다:</p>
-<p><strong>시장은 연준 및 재무부발 유동성 공급과 투자자들의 강한 위험자산 선호 심리에 힘입어 강세장이 지속되고 있지만, 잠재적인 인플레이션 압력과 경기 둔화 가능성도 엿보이는 복합적인 시기입니다.</strong></p>
+                <p><p>안녕하소! 경제 전문가 Moo입니다.</p>
+<p>현재 시장은 <strong>연준의 유동성 공급과 강한 위험 선호 심리로 증시가 활황이지만, 장기 금리 상승과 원유 가격 오름세가 인플레이션 우려를 다시 키우는 복합적인 상황</strong>입니다.</p>
+<p>주요 뉴스로는 연준이 자산 규모를 늘리고 역레포 시장 자금을 흡수하며 시장에 유동성을 공급하고 있고, 견조한 기업 실적과 인공지능(AI) 등 성장주 중심의 랠리가 지속되며 주식 시장의 강세가 뚜렷합니다. 동시에 국제 유가 상승세가 다시 나타나며 인플레이션 압력이 재부각될 조짐을 보이고 있습니다.</p>
 <hr />
-<p><strong>주요 뉴스 요약:</strong></p>
-<ol>
-<li><strong>유동성 파티 지속:</strong> 미국 연준은 기준금리를 동결했지만, 연준의 자산 증가와 역레포(RRP) 자금의 급감, 그리고 재무부 일반계정(TGA) 잔고 감소가 맞물려 시장에 상당한 유동성이 공급되고 있습니다. 이는 주식 등 위험자산에 대한 투자 심리를 크게 부추기고 있습니다.</li>
-<li><strong>기술주 중심의 강세장:</strong> AI 등 기술 섹터의 성장에 대한 기대감이 여전히 높은 가운데, S&amp;P 500과 나스닥 지수가 연일 사상 최고치를 경신하며 위험자산 선호 현상이 뚜렷하게 나타나고 있습니다. 전반적인 기업 실적도 이를 뒷받침하는 모습입니다.</li>
-</ol>
-<hr />
-<p><strong>1. 유동성의 3대 측면에서 현재 시장 분석</strong></p>
+<h3>1. 유동성의 3대 측면(연준, 재무부, 시장) 현재 시장 분석</h3>
 <ul>
 <li>
-<p><strong>연준 (Fed): 유동성 공급 우호적</strong></p>
+<p><strong>연준 (Fed): 유동성 공급 기조 뚜렷!</strong></p>
 <ul>
-<li><strong>미 기준금리 (3.64%) 및 SOFR (3.59%):</strong> 기준금리는 동결 상태를 유지하고 있으며, 단기금리인 SOFR이 기준금리보다 낮은 수준을 유지하고 있어 단기 시장의 유동성이 풍부함을 시사합니다.</li>
-<li><strong>Fed 자산 (6.73조 달러, ▲0.28%):</strong> 연준의 자산이 소폭 증가했습니다. 이는 양적 긴축(QT)의 속도가 둔화되거나 일시적인 자산 증가 요인이 발생하여 시장에 유동성을 공급하는 효과로 해석될 수 있습니다.</li>
-<li><strong>RRP (역레포, 2.03조 달러, ▼45.31%):</strong> 연준 역레포 잔고가 크게 감소했습니다. 이는 연준으로 흡수되었던 단기자금이 다시 시장으로 흘러나오고 있다는 의미로, 강력한 유동성 공급 요인으로 작용하고 있습니다.</li>
-<li><strong>지급준비금 (3.10조 달러, ▲2.32%):</strong> 은행들의 지급준비금이 증가하여 은행 시스템 내 유동성이 개선되고 있음을 보여줍니다.</li>
+<li><strong>미 기준금리(3.64%)</strong>는 현재 동결 상태지만, <strong>미국채 2년물 금리(3.98%)</strong>보다 낮게 형성되어 시장은 연준의 금리 인상 가능성을 배제하지 않고 있거나, 향후 경제 성장을 기대하고 있습니다.</li>
+<li><strong>Fed 자산(6조 7,285억 달러, ▲ 0.28%)</strong>이 증가했다는 것은 양적 긴축(QT)을 중단했거나, 오히려 자산을 늘려 시장에 유동성을 공급하고 있다는 강력한 신호입니다.</li>
+<li><strong>SOFR(3.59%, ▼ 0.28%)</strong>은 단기 자금 시장의 압력이 완화되었음을 보여주며, 이는 연준의 유동성 공급 정책 효과로 풀이됩니다.</li>
+<li><strong>RRP(역레포) 잔액(2.03억 달러, ▼ 45.31%)</strong>이 큰 폭으로 감소했다는 것은 연준에 맡겨졌던 자금이 대거 시장으로 흘러 들어와 유동성을 풍부하게 만들고 있음을 의미합니다.</li>
+<li><strong>지급준비금(3조 1,028억 달러, ▲ 2.32%)</strong> 증가는 은행들이 보유한 여유 자금이 많아 대출 여력이 확대되었음을 나타냅니다.</li>
 </ul>
 </li>
 <li>
-<p><strong>재무부 (Treasury): 유동성 공급 우호적</strong></p>
+<p><strong>재무부 (Treasury): 시장으로의 자금 유입 지속!</strong></p>
 <ul>
-<li><strong>TGA 잔고 (83.86만 달러, ▼4.46%):</strong> 재무부 일반계정 잔고가 감소했습니다. 이는 정부가 국채 발행을 줄이거나 지출을 늘리면서 시장에 자금이 풀려나가고 있음을 나타내며, 유동성 증가에 기여합니다.</li>
+<li><strong>TGA 잔고(8,385억 달러, ▼ 4.46%)</strong>가 감소했다는 것은 재무부 계좌에 있던 돈이 시장으로 풀려나가 시중 유동성을 늘리는 효과를 줍니다.</li>
 </ul>
 </li>
 <li>
-<p><strong>시장 (Market): 풍부한 유동성 속 위험자산 선호 심리 강화</strong></p>
+<p><strong>시장 (Market): 위험 선호 심리 강화 속 인플레이션 압력 재부각!</strong></p>
 <ul>
-<li><strong>M2 통화량 (22.69조 달러, ▲0.26%):</strong> 시중에 풀린 통화량이 꾸준히 증가하고 있어 전반적인 시장 유동성이 풍부함을 뒷받침합니다.</li>
-<li><strong>미국채 10년 (4.46%) 및 2년 (3.98%):</strong> 두 금리 모두 상승 추세를 보이고 있습니다. 이는 경제 성장 기대감과 함께 인플레이션에 대한 미묘한 우려가 반영된 것으로 해석됩니다.</li>
-<li><strong>장단기(10년-2년) 금리차 (0.48%p, ▲2.00bp):</strong> 금리차가 양의 값을 유지하며 소폭 확대되었습니다. 이는 아직까지는 심각한 경기 침체 우려가 시장에 크게 반영되지 않고 있음을 나타내는 긍정적인 신호입니다.</li>
-<li><strong>하이일드 스프레드 (2.82%):</strong> 안정적으로 낮은 수준을 유지하고 있어 기업들의 채무 불이행 위험이 낮다고 시장이 판단하고 있음을 보여줍니다.</li>
-<li><strong>S&amp;P 500 (7501.24, ▲0.77%) 및 나스닥 (26635.22, ▲0.88%):</strong> 두 지수 모두 지속적인 상승세로 사상 최고치를 경신하며 강한 위험자산 선호 심리를 드러내고 있습니다.</li>
-<li><strong>공포지수 (VIX, 17.26, ▼3.41%):</strong> 하락하여 시장의 변동성과 투자자들의 공포 심리가 완화되었음을 나타냅니다.</li>
-<li><strong>달러인덱스 (98.97, ▲0.50%) 및 원/달러 환율 (1495.88, ▲0.41%):</strong> 달러 강세와 원화 약세가 동시에 나타나고 있습니다. 이는 유동성 공급에도 불구하고 미국 경제의 상대적인 강세 또는 기타 글로벌 요인이 복합적으로 작용하고 있을 가능성을 시사합니다.</li>
-<li><strong>금, 은 값 (▼0.90%, ▼5.63%):</strong> 안전자산인 금과 은 가격이 하락하며 위험자산 선호 심리가 강함을 뒷받침합니다.</li>
-<li><strong>WTI유 (▲0.82%):</strong> 유가 상승은 경제 활동 증가에 따른 수요 증가 기대감을 반영합니다.</li>
-<li><strong>구리 (▼0.99%):</strong> 산업 활동의 바로미터인 구리 가격이 최근 하락한 점은 일부 경기 둔화에 대한 잠재적인 신호로 해석될 수 있습니다.</li>
-<li><strong>비트코인 (▲2.70%):</strong> 높은 상승세를 보이며 투기적 위험자산에 대한 강한 선호가 지속됨을 나타냅니다.</li>
+<li><strong>미국채 10년물 금리(4.46%)와 2년물 금리(3.98%)</strong>는 여전히 높은 수준을 유지하고 있습니다. <strong>장단기 금리차(0.48%, ▲ 2.00bp)</strong>가 소폭 확대된 것은 장기적인 경제 성장과 인플레이션 기대가 커지고 있음을 시사합니다.</li>
+<li><strong>M2 통화량(22조 6,860억 달러, ▲ 0.26%)</strong> 증가는 시중에 통화량이 늘어나고 있음을 확인시켜 줍니다.</li>
+<li><strong>MMF 잔액(개인 투자)(2조 2,982억 달러, ▲ 0.30%)</strong>도 증가세를 보여, 풍부한 유동성 속에서도 여전히 안전자산을 선호하는 투자자들의 움직임이 공존하고 있습니다.</li>
+<li><strong>하이일드 스프레드(2.82%)</strong>는 변동 없이 안정적인 수준을 유지하며 기업 부도 위험에 대한 시장의 우려가 크지 않음을 보여줍니다.</li>
+<li><strong>S&amp;P 500(7501.24, ▲ 0.77%)과 나스닥(26635.22, ▲ 0.88%)</strong>은 강한 상승세를 보이며 연준의 유동성 공급과 기업 실적 기대감에 힘입어 위험 자산 선호 심리가 고조되고 있음을 나타냅니다.</li>
+<li><strong>공포지수(VIX)(17.26, ▼ 3.41%)</strong> 하락은 시장의 불확실성이 감소하고 투자 심리가 개선되었음을 시사합니다.</li>
+<li><strong>달러인덱스(98.98, ▲ 0.51%)</strong>가 상승하고 <strong>원/달러 환율(1498.28, ▲ 0.57%)</strong>도 오르며 달러 강세와 원화 약세가 동시에 나타나고 있습니다. 이는 미국 경제의 상대적 강세와 금리 유지 정책의 영향을 반영합니다.</li>
+<li><strong>금(▼ 1.47%)과 은(▼ 6.56%)</strong> 가격 하락은 인플레이션 헤지나 안전 자산으로서의 매력이 상대적으로 줄어들었음을 보여줍니다.</li>
+<li><strong>WTI유(101.77, ▲ 0.74%)</strong> 가격 상승은 글로벌 경기 회복에 대한 기대감 또는 지정학적 리스크 등으로 인한 공급 우려가 맞물려 인플레이션 압력을 다시 높이는 요인이 될 수 있습니다.</li>
+<li><strong>비트코인(81,330.0, ▲ 2.59%)</strong>의 강한 상승세는 대표적인 위험 자산으로서 시장의 높은 위험 선호 심리와 풍부한 유동성을 반영합니다.</li>
 </ul>
 </li>
 </ul>
-<p><strong>2. 미래 시장 흐름 예측</strong></p>
-<p>현재 시장은 연준과 재무부의 지속적인 유동성 공급, 그리고 견조한 기업 실적 및 기술 성장 기대감에 힘입어 <strong>당분간 위험자산 중심의 강세 흐름을 이어갈 가능성이 높습니다.</strong> 특히 나스닥과 S&amp;P 500의 상승 모멘텀은 유지될 것으로 보입니다.</p>
-<p>하지만 낙관적인 전망 뒤에는 몇 가지 경계해야 할 요소들이 있습니다. 미국채 금리 상승과 유가 상승은 향후 <strong>인플레이션 압력을 다시 높일 수 있으며, 이는 연준의 금리 인하 기대감을 약화시키고 통화 정책 스탠스 변화를 야기할 수</strong> 있습니다. 또한 달러 강세는 글로벌 무역에 영향을 미 미치고, 최근 <strong>구리 가격의 하락은 중장기적인 산업 수요 둔화의 전조일 가능성</strong>도 배제할 수 없어 주의 깊은 모니터링이 필요합니다. 장단기 금리차가 확대되고는 있으나, 추후 다시 축소될 경우 경기 침체에 대한 우려가 다시 고개를 들 수 있습니다.</p>
-<p><strong>3. 투자 시 유의사항</strong></p>
-<p>현재는 강세장이지만, 유동성 축소와 인플레이션 재점화 가능성 등 언제든 시장 흐름이 바뀔 수 있는 위험 요인이 상존합니다. 과도한 낙관론에 휩쓸리기보다는 <strong>변동성 확대에 대비하여 포트폴리오를 다각화하고 위험 관리에 집중하는 것</strong>이 현명합니다.</p></p>
+<h3>2. 미래의 시장 흐름 예측</h3>
+<p>현재 시장은 연준의 적극적인 유동성 공급과 재무부의 TGA 잔고 감소가 맞물려 금융 시장에 자금이 넘쳐나는 '돈의 시대'를 맞이하고 있습니다. 이에 힘입어 주식 시장은 견조한 상승세를 이어가고 있으며, VIX 하락은 투자 심리가 매우 긍정적임을 나타냅니다.</p>
+<p>하지만 미국채 10년물 금리의 고공행진과 WTI 유가의 재상승은 인플레이션 압력이 쉽게 사그라들지 않을 것이라는 시장의 우려를 반영합니다. 연준이 기준금리를 동결하고 있음에도 장기 금리가 높은 것은 시장이 연준의 긴축 완화에도 불구하고 실제 경제 성장과 인플레이션 기대가 높아지고 있음을 보여줍니다. 만약 인플레이션 압력이 예상보다 강하게 나타난다면, 연준이 현재의 유동성 공급 기조를 유지하기 어려워질 수 있으며, 이는 다시 금리 인상 압력으로 이어질 수 있습니다.</p>
+<p>단기적으로는 풍부한 유동성에 힘입어 자산 시장의 강세가 지속될 것으로 예상되지만, 중장기적으로는 인플레이션 지표와 연준의 정책 스탠스 변화 가능성에 따라 변동성이 커질 수 있습니다.</p>
+<h3>3. 투자 시 유의사항</h3>
+<ul>
+<li>현재의 유동성 장세와 위험 선호 심리는 주식 등 위험 자산에 긍정적이지만, 인플레이션 압력과 장기 금리 상승이라는 잠재적 리스크를 항상 염두에 두어야 합니다.</li>
+<li>연준의 유동성 정책 변화 가능성, 원유 가격 동향 및 달러 강세 흐름을 면밀히 주시하며, 시장 상황에 맞는 유연한 자산 배분 전략과 포트폴리오 헤지를 고려하는 신중한 접근이 필요합니다.</li>
+</ul></p>
             </div>
         </div>
 
@@ -715,7 +759,7 @@
                         labels: ["2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14"],
                         datasets: [{
                             label: '달러인덱스',
-                            data: [98.36, 97.6, 97.04, 96.22, 96.45, 96.28, 96.99, 97.61, 97.44, 97.62, 97.82, 97.63, 96.82, 96.8, 96.83, 96.93, 96.88, 97.16, 97.7, 97.93, 97.8, 97.7, 97.88, 97.7, 97.79, 97.61, 98.38, 99.05, 98.77, 99.32, 98.99, 99.18, 98.83, 99.23, 99.74, 100.36, 99.71, 99.58, 100.09, 99.23, 99.65, 98.95, 99.43, 99.6, 99.9, 100.15, 100.51, 99.96, 99.65, 100.03, 99.98, 99.64, 99.13, 98.82, 98.65, 98.37, 98.12, 98.06, 98.22, 98.1, 98.05, 98.41, 98.59, 98.8, 98.51, 98.48, 98.62, 98.92, 98.08, 98.21, 98.47, 98.48, 98.02, 98.25, 97.84, 97.94, 98.29, 98.48, 98.97],
+                            data: [98.36, 97.6, 97.04, 96.22, 96.45, 96.28, 96.99, 97.61, 97.44, 97.62, 97.82, 97.63, 96.82, 96.8, 96.83, 96.93, 96.88, 97.16, 97.7, 97.93, 97.8, 97.7, 97.88, 97.7, 97.79, 97.61, 98.38, 99.05, 98.77, 99.32, 98.99, 99.18, 98.83, 99.23, 99.74, 100.36, 99.71, 99.58, 100.09, 99.23, 99.65, 98.95, 99.43, 99.6, 99.9, 100.15, 100.51, 99.96, 99.65, 100.03, 99.98, 99.64, 99.13, 98.82, 98.65, 98.37, 98.12, 98.06, 98.22, 98.1, 98.05, 98.41, 98.59, 98.8, 98.51, 98.48, 98.62, 98.92, 98.08, 98.21, 98.47, 98.48, 98.02, 98.25, 97.84, 97.94, 98.29, 98.48, 98.98],
                             borderColor: '#3e95cd',
                             borderWidth: 2.5,     /* 선 두께를 살짝 두껍게 */
                             pointRadius: 0,       /* 평소엔 점을 숨김 */
@@ -768,7 +812,7 @@
                         labels: ["2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-19", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15"],
                         datasets: [{
                             label: '원/달러 환율',
-                            data: [1455.24, 1464.93, 1473.01, 1462.9, 1468.84, 1471.58, 1471.52, 1477.78, 1464.83, 1463.26, 1444.81, 1440.98, 1432.51, 1429.27, 1428.76, 1448.8, 1452.54, 1446.68, 1460.11, 1470.68, 1462.4, 1458.54, 1455.33, 1444.19, 1440.9, 1439.52, 1440.23, 1439.97, 1440.16, 1447.75, 1443.44, 1442.2, 1439.99, 1426.93, 1432.32, 1438.5, 1452.27, 1483.07, 1460.75, 1479.51, 1483.89, 1464.47, 1472.78, 1475.34, 1470.58, 1501.75, 1488.91, 1484.87, 1505.25, 1489.84, 1504.21, 1485.36, 1497.31, 1500.97, 1508.36, 1507.02, 1516.13, 1503.33, 1512.09, 1509.22, 1509.26, 1507.85, 1499.13, 1477.6, 1473.28, 1482.18, 1476.84, 1469.42, 1474.06, 1477.92, 1465.15, 1469.26, 1485.8, 1477.96, 1479.95, 1474.69, 1473.0, 1471.99, 1487.38, 1474.01, 1471.73, 1476.05, 1473.96, 1444.45, 1454.79, 1460.55, 1474.45, 1492.99, 1489.84, 1495.88],
+                            data: [1455.24, 1464.93, 1473.01, 1462.9, 1468.84, 1471.58, 1471.52, 1477.78, 1464.83, 1463.26, 1444.81, 1440.98, 1432.51, 1429.27, 1428.76, 1448.8, 1452.54, 1446.68, 1460.11, 1470.68, 1462.4, 1458.54, 1455.33, 1444.19, 1440.9, 1439.52, 1440.23, 1439.97, 1440.16, 1447.75, 1443.44, 1442.2, 1439.99, 1426.93, 1432.32, 1438.5, 1452.27, 1483.07, 1460.75, 1479.51, 1483.89, 1464.47, 1472.78, 1475.34, 1470.58, 1501.75, 1488.91, 1484.87, 1505.25, 1489.84, 1504.21, 1485.36, 1497.31, 1500.97, 1508.36, 1507.02, 1516.13, 1503.33, 1512.09, 1509.22, 1509.26, 1507.85, 1499.13, 1477.6, 1473.28, 1482.18, 1476.84, 1469.42, 1474.06, 1477.92, 1465.15, 1469.26, 1485.8, 1477.96, 1479.95, 1474.69, 1473.0, 1471.99, 1487.38, 1474.01, 1471.73, 1476.05, 1473.96, 1444.45, 1454.79, 1460.55, 1474.45, 1492.99, 1489.84, 1498.28],
                             borderColor: '#3e95cd',
                             borderWidth: 2.5,     /* 선 두께를 살짝 두껍게 */
                             pointRadius: 0,       /* 평소엔 점을 숨김 */
@@ -1186,6 +1230,59 @@
                     }
                 });
                 
+                new Chart(document.getElementById('chart_리포시장_규모'), {
+                    type: 'line',
+                    data: {
+                        labels: ["2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14"],
+                        datasets: [{
+                            label: '리포시장 규모',
+                            data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.02, 0.0, 0.0, 0.0, 0.0, 0.01, 0.1, 0.0, 0.0, 0.0, 18.5, 0.0, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.75, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 3.46, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0],
+                            borderColor: '#3e95cd',
+                            borderWidth: 2.5,     /* 선 두께를 살짝 두껍게 */
+                            pointRadius: 0,       /* 평소엔 점을 숨김 */
+                            pointHoverRadius: 5,  /* 마우스 올렸을 때만 점 표시 */
+                            fill: true,           /* 선 아래 색상 채우기 */
+                            backgroundColor: 'rgba(62, 149, 205, 0.05)',
+                            tension: 0.15
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        plugins: { 
+                            tooltip: {
+                                callbacks: {
+                                    title: function(context) {
+                                        return context[0].label; // 여기서 전체 날짜(YYYY-MM-DD)가 표시됩니다.
+                                    }
+                                }
+                            },
+                            legend: { display: false } 
+                        },
+                        scales: { 
+                            x: { 
+                                display: true,   /* 차트가 커졌으므로 X축 날짜도 표시 */
+                                ticks: { 
+                                    maxRotation: 0, 
+                                    autoSkip: true, 
+                                    maxTicksLimit: 8, /* 날짜가 겹치지 않게 8개 내외로 표시 */
+                                    font: { size: 10 } 
+                                },
+                                grid: { display: false }
+                            }, 
+                            y: { 
+                                display: true,
+                                ticks: { font: { size: 11 } },
+                                grid: { color: '#f0f0f0' }
+                            } 
+                        }
+                    }
+                });
+                
                 new Chart(document.getElementById('chart_TGA_잔고'), {
                     type: 'line',
                     data: {
@@ -1345,6 +1442,59 @@
                     }
                 });
                 
+                new Chart(document.getElementById('chart_MMF_잔액(개인_투자)'), {
+                    type: 'line',
+                    data: {
+                        labels: ["2026-03-02", "2026-03-09", "2026-03-16", "2026-03-23", "2026-03-30", "2026-04-06"],
+                        datasets: [{
+                            label: 'MMF 잔액(개인 투자)',
+                            data: [2252.9, 2264.4, 2275.0, 2285.2, 2291.4, 2298.2],
+                            borderColor: '#3e95cd',
+                            borderWidth: 2.5,     /* 선 두께를 살짝 두껍게 */
+                            pointRadius: 0,       /* 평소엔 점을 숨김 */
+                            pointHoverRadius: 5,  /* 마우스 올렸을 때만 점 표시 */
+                            fill: true,           /* 선 아래 색상 채우기 */
+                            backgroundColor: 'rgba(62, 149, 205, 0.05)',
+                            tension: 0.15
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        plugins: { 
+                            tooltip: {
+                                callbacks: {
+                                    title: function(context) {
+                                        return context[0].label; // 여기서 전체 날짜(YYYY-MM-DD)가 표시됩니다.
+                                    }
+                                }
+                            },
+                            legend: { display: false } 
+                        },
+                        scales: { 
+                            x: { 
+                                display: true,   /* 차트가 커졌으므로 X축 날짜도 표시 */
+                                ticks: { 
+                                    maxRotation: 0, 
+                                    autoSkip: true, 
+                                    maxTicksLimit: 8, /* 날짜가 겹치지 않게 8개 내외로 표시 */
+                                    font: { size: 10 } 
+                                },
+                                grid: { display: false }
+                            }, 
+                            y: { 
+                                display: true,
+                                ticks: { font: { size: 11 } },
+                                grid: { color: '#f0f0f0' }
+                            } 
+                        }
+                    }
+                });
+                
                 new Chart(document.getElementById('chart_하이일드_스프레드'), {
                     type: 'line',
                     data: {
@@ -1457,7 +1607,7 @@
                         labels: ["2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14"],
                         datasets: [{
                             label: '금 값',
-                            data: [4908.8, 4976.2, 5079.7, 5079.9, 5301.6, 5318.4, 4713.9, 4622.5, 4903.7, 4920.4, 4861.4, 4951.2, 5050.9, 5003.8, 5071.6, 4923.7, 5022.0, 4882.9, 4986.5, 4975.9, 5059.3, 5204.7, 5155.8, 5206.4, 5176.5, 5230.5, 5294.4, 5107.4, 5120.2, 5065.3, 5146.1, 5091.5, 5229.7, 5167.4, 5115.8, 5052.5, 4994.0, 5001.0, 4889.9, 4600.7, 4570.4, 4404.1, 4399.3, 4549.8, 4375.5, 4492.0, 4526.0, 4647.6, 4783.2, 4651.5, 4656.8, 4657.1, 4749.5, 4792.2, 4761.9, 4742.4, 4825.0, 4800.0, 4785.4, 4857.6, 4806.6, 4698.4, 4732.5, 4705.1, 4722.3, 4675.4, 4591.5, 4545.2, 4614.7, 4629.9, 4519.5, 4555.8, 4681.9, 4699.8, 4720.4, 4718.7, 4677.6, 4697.7, 4655.3],
+                            data: [4908.8, 4976.2, 5079.7, 5079.9, 5301.6, 5318.4, 4713.9, 4622.5, 4903.7, 4920.4, 4861.4, 4951.2, 5050.9, 5003.8, 5071.6, 4923.7, 5022.0, 4882.9, 4986.5, 4975.9, 5059.3, 5204.7, 5155.8, 5206.4, 5176.5, 5230.5, 5294.4, 5107.4, 5120.2, 5065.3, 5146.1, 5091.5, 5229.7, 5167.4, 5115.8, 5052.5, 4994.0, 5001.0, 4889.9, 4600.7, 4570.4, 4404.1, 4399.3, 4549.8, 4375.5, 4492.0, 4526.0, 4647.6, 4783.2, 4651.5, 4656.8, 4657.1, 4749.5, 4792.2, 4761.9, 4742.4, 4825.0, 4800.0, 4785.4, 4857.6, 4806.6, 4698.4, 4732.5, 4705.1, 4722.3, 4675.4, 4591.5, 4545.2, 4614.7, 4629.9, 4519.5, 4555.8, 4681.9, 4699.8, 4720.4, 4718.7, 4677.6, 4697.7, 4628.6],
                             borderColor: '#3e95cd',
                             borderWidth: 2.5,     /* 선 두께를 살짝 두껍게 */
                             pointRadius: 0,       /* 평소엔 점을 숨김 */
@@ -1510,7 +1660,7 @@
                         labels: ["2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14"],
                         datasets: [{
                             label: '은 값',
-                            data: [95.98, 100.93, 115.08, 105.52, 113.11, 114.04, 78.29, 76.78, 83.04, 84.17, 76.53, 76.74, 82.07, 80.22, 83.75, 75.55, 77.85, 73.45, 77.51, 77.57, 82.28, 86.52, 87.46, 90.94, 87.0, 92.68, 88.28, 82.92, 82.63, 81.69, 83.82, 84.03, 89.08, 85.07, 84.67, 80.91, 80.26, 79.53, 77.24, 70.9, 69.36, 69.05, 69.27, 72.36, 67.67, 69.54, 70.32, 74.69, 75.87, 72.74, 72.66, 71.83, 75.22, 76.28, 76.32, 75.52, 79.39, 79.49, 78.61, 81.74, 79.95, 76.41, 77.89, 75.46, 76.38, 75.0, 73.21, 71.57, 73.53, 75.95, 73.07, 73.11, 76.81, 79.7, 80.39, 85.49, 85.13, 88.89, 83.89],
+                            data: [95.98, 100.93, 115.08, 105.52, 113.11, 114.04, 78.29, 76.78, 83.04, 84.17, 76.53, 76.74, 82.07, 80.22, 83.75, 75.55, 77.85, 73.45, 77.51, 77.57, 82.28, 86.52, 87.46, 90.94, 87.0, 92.68, 88.28, 82.92, 82.63, 81.69, 83.82, 84.03, 89.08, 85.07, 84.67, 80.91, 80.26, 79.53, 77.24, 70.9, 69.36, 69.05, 69.27, 72.36, 67.67, 69.54, 70.32, 74.69, 75.87, 72.74, 72.66, 71.83, 75.22, 76.28, 76.32, 75.52, 79.39, 79.49, 78.61, 81.74, 79.95, 76.41, 77.89, 75.46, 76.38, 75.0, 73.21, 71.57, 73.53, 75.95, 73.07, 73.11, 76.81, 79.7, 80.39, 85.49, 85.13, 88.89, 83.06],
                             borderColor: '#3e95cd',
                             borderWidth: 2.5,     /* 선 두께를 살짝 두껍게 */
                             pointRadius: 0,       /* 평소엔 점을 숨김 */
@@ -1563,7 +1713,7 @@
                         labels: ["2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14"],
                         datasets: [{
                             label: '구리',
-                            data: [5.74, 5.91, 5.98, 5.83, 5.89, 6.18, 5.9, 5.8, 6.06, 5.83, 5.8, 5.86, 5.95, 5.9, 5.95, 5.77, 5.79, 5.63, 5.79, 5.73, 5.83, 5.77, 5.92, 5.98, 5.95, 6.0, 5.89, 5.77, 5.86, 5.75, 5.76, 5.8, 5.9, 5.85, 5.82, 5.71, 5.79, 5.73, 5.55, 5.43, 5.34, 5.44, 5.42, 5.53, 5.45, 5.47, 5.48, 5.59, 5.62, 5.56, 5.58, 5.54, 5.76, 5.75, 5.87, 5.98, 6.07, 6.07, 6.07, 6.1, 6.04, 6.0, 6.12, 6.08, 6.02, 6.02, 5.91, 5.88, 5.93, 5.93, 5.8, 5.94, 6.14, 6.13, 6.25, 6.41, 6.49, 6.64, 6.57],
+                            data: [5.74, 5.91, 5.98, 5.83, 5.89, 6.18, 5.9, 5.8, 6.06, 5.83, 5.8, 5.86, 5.95, 5.9, 5.95, 5.77, 5.79, 5.63, 5.79, 5.73, 5.83, 5.77, 5.92, 5.98, 5.95, 6.0, 5.89, 5.77, 5.86, 5.75, 5.76, 5.8, 5.9, 5.85, 5.82, 5.71, 5.79, 5.73, 5.55, 5.43, 5.34, 5.44, 5.42, 5.53, 5.45, 5.47, 5.48, 5.59, 5.62, 5.56, 5.58, 5.54, 5.76, 5.75, 5.87, 5.98, 6.07, 6.07, 6.07, 6.1, 6.04, 6.0, 6.12, 6.08, 6.02, 6.02, 5.91, 5.88, 5.93, 5.93, 5.8, 5.94, 6.14, 6.13, 6.25, 6.41, 6.49, 6.64, 6.56],
                             borderColor: '#3e95cd',
                             borderWidth: 2.5,     /* 선 두께를 살짝 두껍게 */
                             pointRadius: 0,       /* 평소엔 점을 숨김 */
@@ -1616,7 +1766,7 @@
                         labels: ["2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14"],
                         datasets: [{
                             label: 'WTI유',
-                            data: [59.36, 61.07, 60.63, 62.39, 63.21, 65.42, 65.21, 62.14, 63.21, 65.14, 63.29, 63.55, 64.36, 63.96, 64.63, 62.84, 62.89, 62.33, 65.19, 66.43, 66.39, 66.31, 65.63, 65.42, 65.21, 67.02, 71.23, 74.56, 74.66, 81.01, 90.9, 94.77, 83.45, 87.25, 95.73, 98.71, 93.5, 96.21, 96.32, 96.14, 98.32, 88.13, 92.35, 90.32, 94.48, 99.64, 102.88, 101.38, 100.12, 111.54, 112.41, 112.95, 94.41, 97.87, 96.57, 99.08, 91.28, 91.29, 94.69, 83.85, 89.61, 92.13, 92.96, 95.85, 94.4, 96.37, 99.93, 106.88, 105.07, 101.94, 106.42, 102.27, 95.08, 94.81, 95.42, 98.07, 102.18, 101.02, 101.85],
+                            data: [59.36, 61.07, 60.63, 62.39, 63.21, 65.42, 65.21, 62.14, 63.21, 65.14, 63.29, 63.55, 64.36, 63.96, 64.63, 62.84, 62.89, 62.33, 65.19, 66.43, 66.39, 66.31, 65.63, 65.42, 65.21, 67.02, 71.23, 74.56, 74.66, 81.01, 90.9, 94.77, 83.45, 87.25, 95.73, 98.71, 93.5, 96.21, 96.32, 96.14, 98.32, 88.13, 92.35, 90.32, 94.48, 99.64, 102.88, 101.38, 100.12, 111.54, 112.41, 112.95, 94.41, 97.87, 96.57, 99.08, 91.28, 91.29, 94.69, 83.85, 89.61, 92.13, 92.96, 95.85, 94.4, 96.37, 99.93, 106.88, 105.07, 101.94, 106.42, 102.27, 95.08, 94.81, 95.42, 98.07, 102.18, 101.02, 101.77],
                             borderColor: '#3e95cd',
                             borderWidth: 2.5,     /* 선 두께를 살짝 두껍게 */
                             pointRadius: 0,       /* 평소엔 점을 숨김 */
@@ -1669,7 +1819,7 @@
                         labels: ["2026-02-14", "2026-02-15", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-21", "2026-02-22", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-14", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-28", "2026-03-29", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-05", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-15"],
                         datasets: [{
                             label: '비트코인',
-                            data: [69767.62, 68788.19, 68843.16, 67494.22, 66425.32, 66957.52, 68005.42, 68003.77, 67659.39, 64616.74, 64080.04, 67960.12, 67453.77, 65881.8, 66995.86, 65738.1, 68775.85, 68293.65, 72710.58, 70841.12, 68136.49, 67272.59, 65969.78, 68402.38, 69926.92, 70204.88, 70493.46, 70968.27, 71214.62, 72789.91, 74861.09, 73922.48, 71245.58, 69912.79, 70522.59, 68711.52, 67845.21, 70914.86, 70517.86, 71309.88, 68791.62, 66338.38, 66319.7, 65954.92, 66691.45, 68233.31, 68078.55, 66888.57, 66931.1, 67290.52, 68981.9, 68859.83, 71940.7, 71123.36, 71767.83, 72979.05, 73054.27, 70753.41, 74484.64, 74181.61, 74805.08, 75152.13, 77126.88, 75726.21, 73856.35, 75872.52, 76352.77, 78203.1, 78268.95, 77455.31, 77612.02, 78657.54, 77366.62, 76350.67, 75776.13, 76304.32, 78179.0, 78657.25, 78538.23, 79827.91, 80927.05, 81427.53, 80009.99, 80186.77, 80664.37, 82138.93, 81728.3, 80477.49, 79277.12, 81416.03],
+                            data: [69767.62, 68788.19, 68843.16, 67494.22, 66425.32, 66957.52, 68005.42, 68003.77, 67659.39, 64616.74, 64080.04, 67960.12, 67453.77, 65881.8, 66995.86, 65738.1, 68775.85, 68293.65, 72710.58, 70841.12, 68136.49, 67272.59, 65969.78, 68402.38, 69926.92, 70204.88, 70493.46, 70968.27, 71214.62, 72789.91, 74861.09, 73922.48, 71245.58, 69912.79, 70522.59, 68711.52, 67845.21, 70914.86, 70517.86, 71309.88, 68791.62, 66338.38, 66319.7, 65954.92, 66691.45, 68233.31, 68078.55, 66888.57, 66931.1, 67290.52, 68981.9, 68859.83, 71940.7, 71123.36, 71767.83, 72979.05, 73054.27, 70753.41, 74484.64, 74181.61, 74805.08, 75152.13, 77126.88, 75726.21, 73856.35, 75872.52, 76352.77, 78203.1, 78268.95, 77455.31, 77612.02, 78657.54, 77366.62, 76350.67, 75776.13, 76304.32, 78179.0, 78657.25, 78538.23, 79827.91, 80927.05, 81427.53, 80009.99, 80186.77, 80664.37, 82138.93, 81728.3, 80477.49, 79277.12, 81330.0],
                             borderColor: '#3e95cd',
                             borderWidth: 2.5,     /* 선 두께를 살짝 두껍게 */
                             pointRadius: 0,       /* 평소엔 점을 숨김 */
